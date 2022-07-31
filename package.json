@@ -1,17 +1,17 @@
 {
-  "name": "discord-bot-node",
+  "name": "discord-webhook-node",
   "version": "1.0.0",
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MinaSnooze/discord-bot-node.git"
+    "url": "git+https://github.com/MinaSnooze/discord-webhook-node.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MinaSnooze/discord-bot-node/issues"
+    "url": "https://github.com/MinaSnooze/discord-webhook-node/issues"
   },
-  "homepage": "https://github.com/MinaSnooze/discord-bot-node#readme",
+  "homepage": "https://github.com/MinaSnooze/discord-webhook-node#readme",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.101",
     "esbuild": "^0.14.49",
