@@ -12,7 +12,7 @@ export const lambdaHandler = async () => {
 
   const embedFieldData = news.map((v) => <Field>{ name: v.title, value: v.link });
 
-  SendMessageEmbed(
+  await SendMessageEmbed(
     '無料配布,配信大好きマン',
     '昨日の無料配布,配信ゲーム記事',
     '昨日に各ニュースサイトから発信された、\n無料配布,配信のゲーム記事をピックアップ！',

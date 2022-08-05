@@ -1,4 +1,4 @@
-import * as https from 'https';
+import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -15,7 +15,7 @@ export type Field = {
   value: string;
 };
 
-export const SendMessageEmbed = (username: string, title: string, description: string, fields: Field[]) => {
+export const SendMessageEmbed = async (username: string, title: string, description: string, fields: Field[]) => {
   const data = JSON.stringify({
     username,
     embeds: [
@@ -30,13 +30,20 @@ export const SendMessageEmbed = (username: string, title: string, description: s
       },
     ],
   });
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  };
-  const req = https.request(DISCORD_WEBHOOK_URL, options);
-  req.write(data);
-  req.end();
+  try {
+    const res = await fetch(DISCORD_WEBHOOK_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: data,
+    });
+    if (!res.ok) {
+      throw new Error(`${res.status} ${res.statusText}`);
+    }
+    const text = await res.text();
+    console.log(text);
+  } catch (err) {
+    console.log(err);
+  }
 };
