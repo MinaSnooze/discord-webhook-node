@@ -5,7 +5,8 @@ export const lambdaHandler = async () => {
   const automaton = await GetFreeGameNews('https://automaton-media.com/feed/');
   const gamespark = await GetFreeGameNews('https://www.gamespark.jp/rss/index.rdf');
   const fourgamer = await GetFreeGameNews('https://www.4gamer.net/rss/pc/pc_news.xml');
-  const news = automaton.concat(gamespark, fourgamer);
+  const doope = await GetFreeGameNews('https://doope.jp/feed/');
+  const news = automaton.concat(gamespark, fourgamer, doope);
   if (news.length === 0) {
     return;
   }

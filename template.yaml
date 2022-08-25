@@ -4,7 +4,7 @@ Description: >
   discord-webhook-node
 Globals:
   Function:
-    Timeout: 5
+    Timeout: 10
 
 Parameters:
   DiscordWebhookUrl:
